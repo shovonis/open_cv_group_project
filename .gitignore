@@ -19,7 +19,7 @@ lib/
 lib64/
 parts/
 sdist/
-data/
+
 var/
 wheels/
 pip-wheel-metadata/
@@ -56,6 +56,7 @@ coverage.xml
 # Media large files
 *.mp4
 *.csv
+*avi
 
 # Translations
 *.mo

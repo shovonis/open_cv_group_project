@@ -12,6 +12,9 @@ def main():
                                                                                 max_images_per_class=max_sample)
     model, history = train_model.train_model(clip_X_train, clip_X_train, clip_X_train, clip_Y_train,
                                              classes_list=classes_list)
+    # Save the model
+    model.save('model/trained_model.h5')
+
     # Plot training history
     plot_results.plot_train_loss_history(history)
     plot_results.plot_train_acc_history(history)
