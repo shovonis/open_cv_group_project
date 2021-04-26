@@ -40,7 +40,7 @@ def create_dataset(classes_list, dataset_directory, max_images_per_class):
             # Construct the complete video path
             video_file_path = os.path.join(dataset_directory, class_name, file_name)
             # Calling the frame_extraction method for every video file path
-            frames = frames_extraction(video_file_path, 128, 128)
+            frames = frames_extraction(video_file_path, 64, 64)
             # Appending the frames to a temporary list.
             temp_features.extend(frames)
         # Adding randomly selected frames to the features list

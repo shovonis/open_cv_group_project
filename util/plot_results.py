@@ -1,6 +1,7 @@
 import itertools
 import matplotlib.pyplot as plt
 import numpy as np
+import pylab as pl
 from sklearn.metrics import confusion_matrix
 
 
@@ -37,6 +38,7 @@ def plot_confusion_matrix(cm, classes,
     plt.tight_layout()
     plt.ylabel('True label')
     plt.xlabel('Predicted label')
+    pl.save('../model/confusion_matrix.png')
     plt.show()
 
 
@@ -44,6 +46,7 @@ def plot_train_loss_history(model_training_history):
     plt.plot(model_training_history.history['loss'], label='Training loss')
     plt.plot(model_training_history.history['val_loss'], label='Validation loss')
     plt.legend()
+    pl.save('../model/train_vs_test_loss.png')
     plt.show()
 
 
@@ -51,4 +54,5 @@ def plot_train_acc_history(model_training_history):
     plt.plot(model_training_history.history['accuracy'], label='Training accuracy')
     plt.plot(model_training_history.history['val_accuracy'], label='Validation accuracy')
     plt.legend()
+    pl.save('../model/train_vs_test_acc.png')
     plt.show()

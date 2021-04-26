@@ -17,7 +17,7 @@ def get_data(dataset_directory, classes_list, max_images_per_class):
 
 def train_model(clip_X_train, optic_X_train, disp_X_train, target, classes_list):
     # Create the model
-    input_shape = (128, 128, 3)
+    input_shape = (64, 64, 3)
     input_clip, flatten_clips = nn.DeepVDs.deep_vds_from_clip(input_shape)
     input_optic, flatten_optics = nn.DeepVDs.deep_vds_from_optic(input_shape)
     input_disp, flatten_disp = nn.DeepVDs.deep_vds_from_dsip(input_shape)
@@ -30,8 +30,8 @@ def train_model(clip_X_train, optic_X_train, disp_X_train, target, classes_list)
 
 
     # Start Training
-    model_training_history = model.fit(x=[clip_X_train, optic_X_train, disp_X_train], y=target, epochs=300,
-                                       batch_size=8, shuffle=False,
+    model_training_history = model.fit(x=[clip_X_train, optic_X_train, disp_X_train], y=target, epochs=50,
+                                       batch_size=5, shuffle=False,
                                        validation_split=0.2)
 
     return model, model_training_history

@@ -35,8 +35,8 @@ if __name__ == '__main__':
     seed_constant = 15
     np.random.seed(seed_constant)
     tf.random.set_seed(seed_constant)
-    image_height, image_width = 128, 128
-    max_sample = 5000
+    image_height, image_width = 64, 64
+    max_sample = 1000
     classes_list = ["high", "medium", "low"]
     model_output_size = len(classes_list)
     main()
